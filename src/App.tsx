@@ -1,7 +1,14 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DashboardPage from "./components/pages/dashboard/DashboardPage";
+
 export default function App() {
   return (
-    <div>
-      <h1>HealtSync !</h1>
-    </div>
+      <BrowserRouter>
+      <Routes>
+        <Route path={"/"} element={<DashboardPage/>} />
+      </Routes>
+      </BrowserRouter>
+      
+ 
   );
 }
