@@ -9,33 +9,39 @@ export default function Header() {
       </div>
       <div className="user">
         <h3>Othmane</h3>
-        <img src="" alt="Z" />
+        <img src="" alt="user-logo" />
       </div>
     </HeaderStyled>
   );
 }
 
 const HeaderStyled = styled.div`
-  padding: 15px;
+  margin: 15px 15px 10px 15px;
   display: flex;
   justify-content: space-between;
-  background-color: green;
-
+  align-items: center;
+  font-weight: 700;
+  color: #5d7285;
+  font-family: "Epilogue";
   .title {
     display: flex;
-    background-color: purple;
-    img{
+    img {
+      margin-right: 15px;
       width: 80px;
       height: auto;
+      cursor: pointer;
     }
   }
-  .user{
+  .user {
     display: flex;
 
-    img{
-        width: 50px;
-        height: 50px;
-        background-color: blue;
+    img {
+      margin-left: 15px;
+      width: 50px;
+      height: 50px;
+      border-radius: 40px;
+      background-color: grey;
+      cursor: pointer;
     }
   }
 `;
