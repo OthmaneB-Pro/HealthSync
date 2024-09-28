@@ -16,7 +16,7 @@ export default function Header() {
 }
 
 const HeaderStyled = styled.div`
-  margin: 15px 15px 10px 15px;
+  margin: 0px 15px 0px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -46,7 +46,6 @@ export default function Sidebar() {
 const SidebarStyled = styled.div`
   width: 280px;
   height: 80vh;
-  margin-top: 30px;
   ul {
     padding: 0px;
     li {

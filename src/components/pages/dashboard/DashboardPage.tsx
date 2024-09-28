@@ -1,5 +1,12 @@
+import styled from "styled-components";
+
 export default function DashboardPage() {
   return (
-    <div></div>
-  )
+    <DashboardStyled>
+      <h1>Dashboard</h1>
+      <p>Bienvenue sur votre tableau de bord.</p>
+    </DashboardStyled>
+  );
 }
+const DashboardStyled = styled.div`
+`;
