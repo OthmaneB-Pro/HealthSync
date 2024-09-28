@@ -1,16 +1,12 @@
 import DashBoardTitle from "./DashBoardTitle";
 import styled from "styled-components";
 import ButtonContainer from "./ButtonContainer";
-import { DashboardContainerType } from "./typeDashboard";
 
-export default function DashboardContainer({
-  chartType,
-  setChartType,
-}: DashboardContainerType) {
+export default function DashboardContainer() {
   return (
     <ContainerStyled>
       <DashBoardTitle />
-      <ButtonContainer chartType={chartType} setChartType={setChartType} />
+      <ButtonContainer />
     </ContainerStyled>
   );
 }

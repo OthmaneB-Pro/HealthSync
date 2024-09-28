@@ -1,12 +1,12 @@
 import Button from "../../../../reusable-ui/Button";
-import { DashboardContainerType } from "./typeDashboard";
 import styled from "styled-components";
 import { ButtonList } from "./ButtonList";
+import { useChartStore } from "../../../../../stores/useChartStore";
 
-export default function ButtonContainer({
-  chartType,
-  setChartType,
-}: DashboardContainerType) {
+export default function ButtonContainer() {
+  const chartType = useChartStore((state) => state.chartType);
+  const setChartType = useChartStore((state) => state.setChartType);
+
   return (
     <ButtonContainerStyled>
       {ButtonList.map((button) => (
