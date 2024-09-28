@@ -9,7 +9,7 @@ export const sidebarList = [
     label: "Dashboard",
   },
   {
-    href: "/",
+    href: "/mealTracking",
     Logo: <FaPencilAlt />,
     label: "Suivi des repas",
   },
