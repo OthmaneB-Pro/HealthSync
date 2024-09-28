@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DashboardPage from "./components/pages/dashboard/DashboardPage";
-import Layout from "./components/reusable-ui/Layout";
+import Layout from "./components/layout/Layout";
 import "./App.css";
 
 export default function App() {
@@ -8,8 +8,8 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path={"/"} element={<Layout />} >
-          <Route index element={<DashboardPage />} />
+          <Route path={"/"} element={<Layout />}>
+            <Route index element={<DashboardPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
