@@ -30,7 +30,7 @@ export const MyLineChart = () => {
       <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis domain={[60, 'auto']} />
+        <YAxis domain={[60, "auto"]} />
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="poids" stroke="#8884d8" />
