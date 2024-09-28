@@ -7,6 +7,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Cell,
 } from "recharts";
 
 const data = [
@@ -19,6 +20,12 @@ const data = [
   { name: "Dimanche", Heure_De_Sommeil: 6 },
 ];
 
+const getBarColor = (hours: number) => {
+  if (hours < 6) return "#FF0000";
+  if (hours >= 6 && hours <= 8) return "#FFA500";
+  return "#008000";
+};
+
 export const MyBarChart = () => {
   return (
     <ResponsiveContainer width="100%" height={450}>
@@ -28,7 +35,14 @@ export const MyBarChart = () => {
         <YAxis domain={[1, 15]} />
         <Tooltip />
         <Legend />
-        <Bar type="monotone" dataKey="Heure_De_Sommeil" fill="#8884d8" />
+        <Bar type="monotone" dataKey="Heure_De_Sommeil">
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={getBarColor(entry.Heure_De_Sommeil)}
+            />
+          ))}
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );

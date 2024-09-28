@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import { MyLineChart } from "./lineChart/LineChart";
+import { MyLineChart } from "./chart/LineChart";
 import { useState } from "react";
 import Button from "../../reusable-ui/Button";
 import { GiNightSleep } from "react-icons/gi";
 import { FaCalculator, FaWeight } from "react-icons/fa";
-import { MyBarChart } from "./lineChart/BarChart";
+import { MyBarChart } from "./chart/BarChart";
+import { MyPieChart } from "./chart/PieChart";
 
 export default function DashboardPage() {
-  const [graphType, setGraphType] = useState("weight");
+  const [chartType, setChartType] = useState("weight");
   return (
     <DashboardStyled>
       <div className="container">
@@ -16,25 +17,25 @@ export default function DashboardPage() {
           <Button
             label="Poids"
             Logo={<FaWeight />}
-            onClick={() => setGraphType("weight")}
+            onClick={() => setChartType("weight")}
           />
           <Button
             label="Sommeil"
             Logo={<GiNightSleep />}
-            onClick={() => setGraphType("sleep")}
+            onClick={() => setChartType("sleep")}
           />
           <Button
             label="Calorie"
             Logo={<FaCalculator />}
-            onClick={() => setGraphType("calory")}
+            onClick={() => setChartType("calory")}
           />
         </div>
       </div>
       <p>Augmentez vos heures de sommeil !</p>
 
-      {graphType === "weight" && <MyLineChart />}
-      {graphType === "sleep" && <MyBarChart />}
-      {graphType === "calory" && <MyLineChart />}
+      {chartType === "weight" && <MyLineChart />}
+      {chartType === "sleep" && <MyBarChart />}
+      {chartType === "calory" && <MyPieChart />}
     </DashboardStyled>
   );
 }
