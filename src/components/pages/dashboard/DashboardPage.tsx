@@ -1,12 +1,13 @@
-import styled from "styled-components";
+import DashboardContainer from "./dashboardElement/container/DashboardContainer";
+import TextDashboard from "./dashboardElement/TextDashboard";
+import ChartDashboard from "./dashboardElement/ChartDashboard";
 
 export default function DashboardPage() {
   return (
-    <DashboardStyled>
-      <h1>Dashboard</h1>
-      <p>Bienvenue sur votre tableau de bord.</p>
-    </DashboardStyled>
+    <div>
+      <DashboardContainer />
+      <TextDashboard />
+      <ChartDashboard />
+    </div>
   );
 }
-const DashboardStyled = styled.div`
-`;
