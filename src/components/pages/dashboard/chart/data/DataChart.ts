@@ -1,6 +1,6 @@
 export const dataLineChart = [
   { name: "Jan", poids: 60 },
-  { name: "Feb", poids: 63 },
+  { name: "Fev", poids: 63 },
   { name: "Mar", poids: 62 },
   { name: "Avr", poids: 62 },
   { name: "Mai", poids: 65 },
