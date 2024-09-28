@@ -46,6 +46,7 @@ export default function DashboardPage() {
 const DashboardStyled = styled.div`
   h1 {
     font-family: "Epilogue";
+    font-size: 36px;
   }
   p {
     color: red;
