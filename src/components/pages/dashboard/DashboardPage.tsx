@@ -16,16 +16,19 @@ export default function DashboardPage() {
         <div className="button-container">
           <Button
             label="Poids"
+            className={chartType === "weight" ? "button-fix" : ""}
             Logo={<FaWeight />}
             onClick={() => setChartType("weight")}
           />
           <Button
             label="Sommeil"
+            className={chartType === "sleep" ? "button-fix" : ""}
             Logo={<GiNightSleep />}
             onClick={() => setChartType("sleep")}
           />
           <Button
-            label="Calorie"
+            label="Calories"
+            className={chartType === "calory" ? "button-fix" : ""}
             Logo={<FaCalculator />}
             onClick={() => setChartType("calory")}
           />
@@ -58,5 +61,8 @@ const DashboardStyled = styled.div`
     button {
       margin-right: 10px;
     }
+  }
+  .button-fix {
+    background: #a11414;
   }
 `;
