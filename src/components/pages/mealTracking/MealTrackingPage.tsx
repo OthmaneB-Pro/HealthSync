@@ -1,11 +1,21 @@
+import styled from "styled-components";
 import Title from "../../reusable-ui/Title";
+import CardDisplay from "./form/CardDisplay";
 import FormTracking from "./form/FormTracking";
 
 export default function MealTrackingPage() {
   return (
     <div>
       <Title label="Suivi des repas" />
-      <FormTracking />
+      <FormDisplayStyled>
+        <FormTracking />
+        <CardDisplay />
+      </FormDisplayStyled>
     </div>
   );
 }
+
+const FormDisplayStyled = styled.div`
+  display: flex;
+  gap: 50px;
+`
