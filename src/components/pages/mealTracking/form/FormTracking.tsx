@@ -1,14 +1,12 @@
 import { useForm } from "react-hook-form";
 import { schema } from "./yupSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
-import InputWithYup from "../../../reusable-ui/InputYup";
 import Button from "../../../reusable-ui/Button";
 import { FaCircleCheck } from "react-icons/fa6";
-import ErrorText from "../../../reusable-ui/ErrorText";
 import { FormType } from "./typeForm";
 import styled from "styled-components";
 import MealButton from "./mealButton/MealButton";
-import { inputMealList } from "./mealInput/inputMealList";
+import MealInput from "./mealInput/MealInput";
 
 export default function FormTracking() {
   const {
@@ -25,23 +23,7 @@ export default function FormTracking() {
   return (
     <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
       <MealButton setValue={setValue} />
-
-      {inputMealList.map((input) => (
-        <div key={input.name}>
-          <InputWithYup
-            type={input.type}
-            name={input.name}
-            placeholder={input.placeholder}
-            register={register}
-          />
-          {errors[input.name as keyof FormType] && (
-            <ErrorText
-              errors={errors}
-              fieldName={input.name as keyof FormType}
-            />
-          )}
-        </div>
-      ))}
+      <MealInput errors={errors} register={register} />
       <Button
         className="submit-button"
         label="Confirmer"

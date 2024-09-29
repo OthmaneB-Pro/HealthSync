@@ -2,12 +2,7 @@ import styled from "styled-components";
 import Button from "../../../../reusable-ui/Button";
 import { ButtonMealList } from "./buttonMealList";
 import { useState } from "react";
-import { FormType } from "../typeForm";
-import { UseFormSetValue } from "react-hook-form";
-
-type MealButtonType = {
-  setValue: UseFormSetValue<FormType>;
-};
+import { MealButtonType } from "../typeForm";
 
 export default function MealButton({ setValue }: MealButtonType) {
   const [selectedMeal, setSelectedMeal] = useState<string | null>(null);

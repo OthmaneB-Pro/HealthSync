@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Title from "../../reusable-ui/Title";
-import CardDisplay from "./form/CardDisplay";
+import CardDisplay from "./form/cardDisplay/CardDisplay";
 import FormTracking from "./form/FormTracking";
 
 export default function MealTrackingPage() {
@@ -18,4 +18,4 @@ export default function MealTrackingPage() {
 const FormDisplayStyled = styled.div`
   display: flex;
   gap: 50px;
-`
+`;
