@@ -4,7 +4,7 @@ export const schema = yup.object().shape({
   mealName: yup
     .string()
     .oneOf(
-      ["petit dej", "déjeuner", "collation", "diner"],
+      ["petit dejeuner", "déjeuner", "collation", "diner"],
       'Le nom du repas doit être "petit dej", "déjeuner", "collation" ou "diner".'
     )
     .required("Le nom du repas est requis"),
