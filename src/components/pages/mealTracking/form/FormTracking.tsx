@@ -6,12 +6,11 @@ import Button from "../../../reusable-ui/Button";
 import { FaCircleCheck } from "react-icons/fa6";
 import ErrorText from "../../../reusable-ui/ErrorText";
 import { FormType } from "./typeForm";
-import { useState } from "react";
 import styled from "styled-components";
 import MealButton from "./mealButton/MealButton";
+import { inputMealList } from "./mealInput/inputMealList";
 
 export default function FormTracking() {
-  const [selectedMeal, setSelectedMeal] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -23,47 +22,33 @@ export default function FormTracking() {
     console.log(data);
   };
 
-  const handleMealSelection = (meal: string) => {
-    setSelectedMeal(meal);
-    setValue("mealName", meal);
-  };
   return (
-    <div>
-      <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
-        <MealButton
-          selectedMeal={selectedMeal}
-          handleMealSelection={handleMealSelection}
-        />
-        <InputWithYup
-          type="hidden"
-          value={selectedMeal || ""}
-          name="mealName"
-          placeholder=""
-          register={register}
-        />
-        {errors.mealName && <ErrorText errors={errors} fieldName="mealName" />}
-        <InputWithYup
-          type="text"
-          name="search"
-          placeholder="Recherchez un repas"
-          register={register}
-        />
-        {errors.search && <ErrorText errors={errors} fieldName="search" />}{" "}
-        <InputWithYup
-          type="number"
-          name="quantity"
-          placeholder="Quantité"
-          register={register}
-        />
-        {errors.quantity && <ErrorText errors={errors} fieldName="quantity" />}
-        <Button
-          className="submit-button"
-          label="Confirmer"
-          Logo={<FaCircleCheck />}
-          disabled={isSubmitting}
-        />
-      </FormTrackingStyled>
-    </div>
+    <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
+      <MealButton setValue={setValue} />
+
+      {inputMealList.map((input) => (
+        <div key={input.name}>
+          <InputWithYup
+            type={input.type}
+            name={input.name}
+            placeholder={input.placeholder}
+            register={register}
+          />
+          {errors[input.name as keyof FormType] && (
+            <ErrorText
+              errors={errors}
+              fieldName={input.name as keyof FormType}
+            />
+          )}
+        </div>
+      ))}
+      <Button
+        className="submit-button"
+        label="Confirmer"
+        Logo={<FaCircleCheck />}
+        disabled={isSubmitting}
+      />
+    </FormTrackingStyled>
   );
 }
 

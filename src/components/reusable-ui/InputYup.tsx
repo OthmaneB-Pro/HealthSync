@@ -5,7 +5,6 @@ type InputWithYupType = {
   placeholder: string;
   register: any;
   name: string;
-  value? : string;
 };
 
 export default function InputWithYup({
@@ -13,14 +12,12 @@ export default function InputWithYup({
   placeholder,
   register,
   name,
-  value,
 }: InputWithYupType) {
   return (
     <InputWithYupStyled
       type={type}
       placeholder={placeholder}
       {...register(name)}
-      value={value}
     />
   );
 }

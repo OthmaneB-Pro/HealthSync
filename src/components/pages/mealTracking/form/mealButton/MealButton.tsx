@@ -1,16 +1,21 @@
 import styled from "styled-components";
 import Button from "../../../../reusable-ui/Button";
-import { ButtonMealList } from "./ButtonMealList";
+import { ButtonMealList } from "./buttonMealList";
+import { useState } from "react";
+import { FormType } from "../typeForm";
+import { UseFormSetValue } from "react-hook-form";
 
 type MealButtonType = {
-  selectedMeal: string | null;
-  handleMealSelection: (meal: string) => void;
+  setValue: UseFormSetValue<FormType>;
 };
 
-export default function MealButton({
-  selectedMeal,
-  handleMealSelection,
-}: MealButtonType) {
+export default function MealButton({ setValue }: MealButtonType) {
+  const [selectedMeal, setSelectedMeal] = useState<string | null>(null);
+  const handleMealSelection = (meal: string) => {
+    setSelectedMeal(meal);
+    setValue("mealName", meal);
+  };
+
   return (
     <MealButtonStyled>
       {ButtonMealList.map((button) => (
