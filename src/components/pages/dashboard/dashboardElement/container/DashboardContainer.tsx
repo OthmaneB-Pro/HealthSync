@@ -1,11 +1,11 @@
-import DashBoardTitle from "./DashBoardTitle";
 import styled from "styled-components";
 import ButtonContainer from "./ButtonContainer";
+import Title from "../../../../reusable-ui/Title";
 
 export default function DashboardContainer() {
   return (
     <ContainerStyled>
-      <DashBoardTitle />
+      <Title label="Dashboard" />
       <ButtonContainer />
     </ContainerStyled>
   );
