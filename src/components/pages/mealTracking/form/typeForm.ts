@@ -3,7 +3,7 @@ import { FieldErrors, UseFormRegister, UseFormSetValue } from "react-hook-form";
 export type FormType = {
   mealName: string;
   search: string;
-  quantity: string;
+  quantity: number;
 };
 
 export type MealInputType = {

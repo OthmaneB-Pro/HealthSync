@@ -7,8 +7,10 @@ import { FormType } from "./typeForm";
 import styled from "styled-components";
 import MealButton from "./mealButton/MealButton";
 import MealInput from "./mealInput/MealInput";
+import { useMealStore } from "../../../../stores/useMealTracking";
 
 export default function FormTracking() {
+  const { setMealData } = useMealStore();
   const {
     register,
     handleSubmit,
@@ -17,6 +19,7 @@ export default function FormTracking() {
   } = useForm<FormType>({ resolver: yupResolver(schema) });
 
   const onSubmit = (data: FormType) => {
+    setMealData(data.mealName, data.quantity, data.search);
     console.log(data);
   };
 

@@ -1,18 +1,20 @@
 import styled from "styled-components";
+import { useMealStore } from "../../../../../stores/useMealTracking";
 
 export default function CardDisplay() {
+  const { mealName, search, quantity } = useMealStore();
   return (
     <CardDisplayStyled>
       <img
         src="https://www.doitinparis.com/files/2022/bars-restos/burgers/10/junk/junk-burger.jpg"
         alt="imageMeal"
       />
-      <h2>Tacos</h2>
+      <h2>{search}</h2>
       <div className="textCard">
-        <p>Quantité : 25g</p>
+        <p>Quantité : {quantity}g</p>
         <p>Calories : 25cal</p>
       </div>
-      <h4>Petit-Déjeuner</h4>
+      <h4>{mealName}</h4>
     </CardDisplayStyled>
   );
 }
