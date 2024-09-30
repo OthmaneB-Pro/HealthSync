@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import styled from "styled-components";
 
 type InputWithYupType = {
@@ -5,6 +6,7 @@ type InputWithYupType = {
   placeholder: string;
   register: any;
   name: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function InputWithYup({
@@ -12,12 +14,14 @@ export default function InputWithYup({
   placeholder,
   register,
   name,
+  onChange,
 }: InputWithYupType) {
   return (
     <InputWithYupStyled
       type={type}
       placeholder={placeholder}
       {...register(name)}
+      onChange={onChange}
     />
   );
 }

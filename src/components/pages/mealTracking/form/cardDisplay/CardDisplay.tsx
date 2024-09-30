@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { useMealStore } from "../../../../../stores/useMealTracking";
+import { useMealTracking } from "../../../../../stores/useMealTracking";
 
 export default function CardDisplay() {
-  const { mealName, search, quantity } = useMealStore();
+  const { mealName, search, quantity } = useMealTracking();
   return (
     <CardDisplayStyled>
       <img

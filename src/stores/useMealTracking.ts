@@ -7,7 +7,7 @@ type MealState = {
   setMealData: (mealName: string, quantity: number, search: string) => void;
 };
 
-export const useMealStore = create<MealState>((set) => ({
+export const useMealTracking = create<MealState>((set) => ({
   mealName: "",
   quantity: 0,
   search: "",

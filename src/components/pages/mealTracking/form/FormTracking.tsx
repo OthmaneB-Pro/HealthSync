@@ -7,10 +7,14 @@ import { FormType } from "./typeForm";
 import styled from "styled-components";
 import MealButton from "./mealButton/MealButton";
 import MealInput from "./mealInput/MealInput";
-import { useMealStore } from "../../../../stores/useMealTracking";
+import { useMealTracking } from "../../../../stores/useMealTracking";
+import SearchComponent, { Product } from "./mealInput/search/SearchComponent";
+import SearchResults from "./mealInput/search/SearchResults";
+import { useState } from "react";
 
 export default function FormTracking() {
-  const { setMealData } = useMealStore();
+  const { setMealData } = useMealTracking();
+  const [results, setResults] = useState<Product[]>([]);
   const {
     register,
     handleSubmit,
@@ -23,9 +27,15 @@ export default function FormTracking() {
     console.log(data);
   };
 
+  const handleClick = (item: Product) => {
+    setValue("search", item.product_name);
+  };
+
   return (
     <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
       <MealButton setValue={setValue} />
+      <SearchComponent setResults={setResults} />
+      <SearchResults results={results} handleClick={handleClick} />
       <MealInput errors={errors} register={register} />
       <Button
         className="submit-button"
