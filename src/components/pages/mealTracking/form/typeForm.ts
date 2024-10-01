@@ -14,3 +14,12 @@ export type MealInputType = {
 export type MealButtonType = {
   setValue: UseFormSetValue<FormType>;
 };
+
+export type Product = {
+  product_name: string;
+  id: string;
+};
+
+export type SearchComponentProps = {
+  setResults: React.Dispatch<React.SetStateAction<Product[]>>;
+};

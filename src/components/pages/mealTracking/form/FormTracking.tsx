@@ -3,12 +3,12 @@ import { schema } from "./yupSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "../../../reusable-ui/Button";
 import { FaCircleCheck } from "react-icons/fa6";
-import { FormType } from "./typeForm";
+import { FormType, Product } from "./typeForm";
 import styled from "styled-components";
 import MealButton from "./mealButton/MealButton";
 import MealInput from "./mealInput/MealInput";
 import { useMealTracking } from "../../../../stores/useMealTracking";
-import SearchComponent, { Product } from "./mealInput/search/SearchComponent";
+import SearchComponent from "./mealInput/search/SearchComponent";
 import SearchResults from "./mealInput/search/SearchResults";
 import { useState } from "react";
 
@@ -32,18 +32,21 @@ export default function FormTracking() {
   };
 
   return (
-    <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
-      <MealButton setValue={setValue} />
+    <div>
+      <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
+        <MealButton setValue={setValue} />
+        <MealInput errors={errors} register={register} />
+        <Button
+          className="submit-button"
+          label="Confirmer"
+          Logo={<FaCircleCheck />}
+          disabled={isSubmitting}
+        />
+      </FormTrackingStyled>
+
       <SearchComponent setResults={setResults} />
       <SearchResults results={results} handleClick={handleClick} />
-      <MealInput errors={errors} register={register} />
-      <Button
-        className="submit-button"
-        label="Confirmer"
-        Logo={<FaCircleCheck />}
-        disabled={isSubmitting}
-      />
-    </FormTrackingStyled>
+    </div>
   );
 }
 

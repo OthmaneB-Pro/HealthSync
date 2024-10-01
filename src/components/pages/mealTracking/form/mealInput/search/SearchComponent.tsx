@@ -1,13 +1,6 @@
 import { useState } from "react";
+import { SearchComponentProps } from "../../typeForm";
 
-export interface Product {
-  product_name: string;
-  id: string;
-}
-
-interface SearchComponentProps {
-  setResults: React.Dispatch<React.SetStateAction<Product[]>>;
-}
 
 export default function SearchComponent({ setResults }: SearchComponentProps) {
   const [searchTerm, setSearchTerm] = useState<string>("");
