@@ -32,7 +32,7 @@ export default function FormTracking() {
   };
 
   return (
-    <div>
+    <ContainerStyled>
       <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
         <MealButton setValue={setValue} />
         <MealInput errors={errors} register={register} />
@@ -44,9 +44,11 @@ export default function FormTracking() {
         />
       </FormTrackingStyled>
 
-      <SearchComponent setResults={setResults} />
-      <SearchResults results={results} handleClick={handleClick} />
-    </div>
+      <div>
+        <SearchComponent setResults={setResults} />
+        <SearchResults results={results} handleClick={handleClick} />
+      </div>
+    </ContainerStyled>
   );
 }
 
@@ -65,4 +67,9 @@ const FormTrackingStyled = styled.form`
   .submit-button {
     margin-top: 15px;
   }
+`;
+
+const ContainerStyled = styled.div`
+  display: flex;
+  gap: 20px;
 `;

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { SearchComponentProps } from "../../typeForm";
-
+import styled from "styled-components";
+import InputWithYup from "../../../../../reusable-ui/InputYup";
+import Button from "../../../../../reusable-ui/Button";
+import { FaSearch } from "react-icons/fa";
 
 export default function SearchComponent({ setResults }: SearchComponentProps) {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -18,14 +21,24 @@ export default function SearchComponent({ setResults }: SearchComponentProps) {
   };
 
   return (
-    <div>
-      <input
+    <SearchStyled>
+      <InputWithYup
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Recherchez un ingrédient"
       />
-      <button onClick={fetchResults}>Rechercher</button>
-    </div>
+      <Button label="Recherchez" Logo={<FaSearch />} onClick={fetchResults} />
+    </SearchStyled>
   );
 }
+
+const SearchStyled = styled.div`
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  input {
+    width: 200px;
+    margin-bottom: 15px;
+  }
+`;

@@ -4,9 +4,10 @@ import styled from "styled-components";
 type InputWithYupType = {
   type: string;
   placeholder: string;
-  register: any;
-  name: string;
+  register?: any;
+  name?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 };
 
 export default function InputWithYup({
@@ -15,13 +16,15 @@ export default function InputWithYup({
   register,
   name,
   onChange,
+  value,
 }: InputWithYupType) {
   return (
     <InputWithYupStyled
       type={type}
       placeholder={placeholder}
-      {...register(name)}
+      {...(register && register(name))}
       onChange={onChange}
+      value={value}
     />
   );
 }
