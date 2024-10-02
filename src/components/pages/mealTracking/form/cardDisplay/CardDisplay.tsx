@@ -28,12 +28,13 @@ const CardDisplayStyled = styled.div`
   padding: 30px 5px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  
 
   img {
     width: 160px;
     height: auto;
   }
-
+  
   .textCard {
     display: flex;
     justify-content: space-between;

@@ -35,8 +35,9 @@ export default function SearchComponent({ setResults }: SearchComponentProps) {
 
 const SearchStyled = styled.div`
   background: white;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
   input {
     width: 200px;
     margin-bottom: 15px;
