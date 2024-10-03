@@ -27,14 +27,22 @@ const CardDisplayStyled = styled.div`
   height: 290px;
   padding: 30px 5px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-overflow: " [..]";
 
   img {
     width: 160px;
     height: auto;
   }
-  
+
+  h2 {
+    width: 220px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
   .textCard {
     display: flex;
     justify-content: space-between;
