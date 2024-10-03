@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import ErrorText from "../../../../reusable-ui/ErrorText";
 import InputWithYup from "../../../../reusable-ui/InputYup";
 import { FormType, MealInputType } from "../typeForm";
@@ -7,7 +8,7 @@ export default function MealInput({ errors, register }: MealInputType) {
   return (
     <>
       {inputMealList.map((input) => (
-        <div key={input.name}>
+        <MealInputStyled key={input.name}>
           <InputWithYup
             type={input.type}
             name={input.name}
@@ -20,8 +21,15 @@ export default function MealInput({ errors, register }: MealInputType) {
               fieldName={input.name as keyof FormType}
             />
           )}
-        </div>
+        </MealInputStyled>
       ))}
     </>
   );
 }
+
+const MealInputStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
