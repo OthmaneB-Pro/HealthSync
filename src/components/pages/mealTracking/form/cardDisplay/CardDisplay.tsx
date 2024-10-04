@@ -29,7 +29,6 @@ const CardDisplayStyled = styled.div`
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  text-overflow: " [..]";
 
   img {
     width: 160px;
