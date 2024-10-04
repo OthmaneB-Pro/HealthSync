@@ -4,21 +4,10 @@ import styled from "styled-components";
 import InputWithYup from "../../../../../reusable-ui/InputYup";
 import Button from "../../../../../reusable-ui/Button";
 import { FaSearch } from "react-icons/fa";
+import { fetchResults } from "../../../../../../api/MealAndActivityResults";
 
 export default function SearchComponent({ setResults }: SearchComponentProps) {
   const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const fetchResults = async () => {
-    try {
-      const response = await fetch(
-        `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${searchTerm}&search_simple=1&action=process&json=1`
-      );
-      const data = await response.json();
-      setResults(data.products.slice(0, 3));
-    } catch (error) {
-      console.error("Erreur lors de la récupération des données", error);
-    }
-  };
 
   return (
     <SearchStyled>
@@ -28,7 +17,11 @@ export default function SearchComponent({ setResults }: SearchComponentProps) {
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Recherchez un ingrédient"
       />
-      <Button label="Recherchez" Logo={<FaSearch />} onClick={fetchResults} />
+      <Button
+        label="Recherchez"
+        Logo={<FaSearch />}
+        onClick={() => fetchResults(setResults, searchTerm)}
+      />
     </SearchStyled>
   );
 }
