@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import ListResults from "../../../../../reusable-ui/ListResults";
+import { SearchResulsType } from "../../typeForm";
 
 export default function SearchResults({
   results,
   handleClick,
-}: {
-  results: any[];
-  handleClick: (item: any) => void;
-}) {
+}: SearchResulsType) {
   return (
     <ListResultsStyled>
       {results.map((item, index) => (

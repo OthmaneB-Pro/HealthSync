@@ -1,10 +1,5 @@
 import styled from "styled-components";
-
-type ElementListType = {
-  href: string;
-  Logo: JSX.Element;
-  label: string;
-};
+import { ElementListType } from "./typeReusable";
 
 export default function ElementList({ href, Logo, label }: ElementListType) {
   return (

@@ -23,3 +23,8 @@ export type Product = {
 export type SearchComponentProps = {
   setResults: React.Dispatch<React.SetStateAction<Product[]>>;
 };
+
+export type SearchResulsType = {
+  results: any[];
+  handleClick: (item: any) => void;
+}

@@ -1,8 +1,5 @@
 import styled from "styled-components";
-
-type TitleType = {
-  label : string
-}
+import { TitleType } from "./typeReusable";
 
 export default function Title({label} : TitleType) {
   return <TitleStyled>{label}</TitleStyled>;

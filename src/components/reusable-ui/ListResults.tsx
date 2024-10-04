@@ -1,9 +1,5 @@
 import styled from "styled-components";
-
-type ListResultsType = {
-  onClick: () => void;
-  label: string;
-};
+import { ListResultsType } from "./typeReusable";
 
 export default function ListResults({ onClick, label }: ListResultsType) {
   return <ListResultStyled onClick={onClick}>{label}</ListResultStyled>;

@@ -1,14 +1,5 @@
-import { ChangeEvent } from "react";
 import styled from "styled-components";
-
-type InputWithYupType = {
-  type: string;
-  placeholder: string;
-  register?: any;
-  name?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
-};
+import { InputWithYupType } from "./typeReusable";
 
 export default function InputWithYup({
   type,
