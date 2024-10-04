@@ -1,15 +1,15 @@
 import styled from "styled-components";
+import { ButtonType } from "./typeReusable";
 
-type ButtonType = {
-  Logo: JSX.Element;
-  label: string;
-  onClick?: () => void;
-  className? : string;
-};
-
-export default function Button({ Logo, label, onClick, className }: ButtonType) {
+export default function Button({
+  Logo,
+  label,
+  onClick,
+  className,
+  disabled,
+}: ButtonType) {
   return (
-    <ButtonStyled className={className} onClick={onClick}>
+    <ButtonStyled disabled={disabled} className={className} onClick={onClick}>
       {Logo && Logo}
       {label}
     </ButtonStyled>
