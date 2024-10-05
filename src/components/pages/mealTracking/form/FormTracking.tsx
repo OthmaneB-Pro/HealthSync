@@ -33,10 +33,10 @@ export default function FormTracking({ onAddCard }: FormTrackingProps) {
     const newCard: MenuType = {
       id: generateUniqueId(),
       title: data.mealName,
-      src: "",
-      alt: "",
+      src: "https://www.doitinparis.com/files/2022/bars-restos/burgers/10/junk/junk-burger.jpg",
+      alt: "ImageMeal",
       quantity: data.quantity,
-      calory: "",
+      calory: "100",
       mealName: data.mealName,
     };
     onAddCard(newCard);

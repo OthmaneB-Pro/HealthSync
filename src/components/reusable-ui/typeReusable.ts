@@ -41,7 +41,7 @@ export type CardType = {
   src: string;
   alt: string;
   title: string;
-  quantity: string;
+  quantity: number;
   calory: string;
   meal: string;
 };

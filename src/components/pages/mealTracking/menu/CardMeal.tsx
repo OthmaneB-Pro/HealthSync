@@ -11,17 +11,18 @@ export default function CardMeal({ menu }: CardMealProps) {
   return (
     <CardMealStyled>
       <Title label="Petit-déjeuner" />
-      {menu.map((meal, index) => (
-        <Card
-          key={index}
-          title={meal.title}
-          src={meal.src}
-          alt={meal.alt}
-          quantity={meal.quantity}
-          calory={meal.calory}
-          meal={meal.mealName}
-        />
-      ))}
+      {menu.length !== 0 &&
+        menu.map((meal, index) => (
+          <Card
+            key={index}
+            title={meal.title}
+            src={meal.src}
+            alt={meal.alt}
+            quantity={meal.quantity}
+            calory={meal.calory}
+            meal={meal.mealName}
+          />
+        ))}
     </CardMealStyled>
   );
 }
