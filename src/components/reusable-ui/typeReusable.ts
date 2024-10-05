@@ -36,3 +36,12 @@ export type ButtonType = {
   className?: string;
   disabled?: boolean;
 };
+
+export type CardType = {
+  src: string;
+  alt: string;
+  title: string;
+  quantity: string;
+  calory: string;
+  meal: string;
+};
