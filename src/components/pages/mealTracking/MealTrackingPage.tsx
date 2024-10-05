@@ -3,16 +3,26 @@ import Title from "../../reusable-ui/Title";
 import CardDisplay from "./form/cardDisplay/CardDisplay";
 import FormTracking from "./form/FormTracking";
 import CardMeal from "./menu/CardMeal";
+import { useState } from "react";
+import { Empty_Menu } from "../../../data/MenuData";
+import { MenuType } from "./form/typeForm";
 
 export default function MealTrackingPage() {
+  const [menu, setMenu] = useState<MenuType[]>(Empty_Menu);
+
+  const onAddCard = (NewCard: MenuType) => {
+    const updatedMenu = [NewCard, ...menu];
+    setMenu(updatedMenu);
+  };
+
   return (
     <div>
       <Title label="Suivi des repas" />
       <FormDisplayStyled>
-        <FormTracking />
+        <FormTracking onAddCard={onAddCard} />
         <CardDisplay />
       </FormDisplayStyled>
-      <CardMeal/>
+      <CardMeal menu={menu} />
     </div>
   );
 }
