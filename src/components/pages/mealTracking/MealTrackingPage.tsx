@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Title from "../../reusable-ui/Title";
 import CardDisplay from "./form/cardDisplay/CardDisplay";
 import FormTracking from "./form/FormTracking";
+import CardMeal from "./menu/CardMeal";
 
 export default function MealTrackingPage() {
   return (
@@ -11,6 +12,7 @@ export default function MealTrackingPage() {
         <FormTracking />
         <CardDisplay />
       </FormDisplayStyled>
+      <CardMeal/>
     </div>
   );
 }

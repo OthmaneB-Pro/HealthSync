@@ -27,10 +27,6 @@ export default function FormTracking() {
     console.log(data);
   };
 
-  const handleClick = (item: Product) => {
-    setValue("search", item.product_name);
-  };
-
   return (
     <ContainerStyled>
       <FormTrackingStyled onSubmit={handleSubmit(onSubmit)}>
@@ -46,7 +42,10 @@ export default function FormTracking() {
 
       <div>
         <SearchComponent setResults={setResults} />
-        <SearchResults results={results} handleClick={handleClick} />
+        <SearchResults
+          results={results}
+          handleClick={(item: Product) => setValue("search", item.product_name)}
+        />
       </div>
     </ContainerStyled>
   );
