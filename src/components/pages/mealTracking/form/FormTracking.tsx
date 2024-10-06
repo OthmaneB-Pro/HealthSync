@@ -3,7 +3,7 @@ import { schema } from "./yupSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "../../../reusable-ui/Button";
 import { FaCircleCheck } from "react-icons/fa6";
-import { FormType, MenuType, Product } from "./typeForm";
+import { FormTrackingProps, FormType, MenuType, Product } from "./typeForm";
 import styled from "styled-components";
 import MealButton from "./mealButton/MealButton";
 import MealInput from "./mealInput/MealInput";
@@ -12,10 +12,6 @@ import SearchComponent from "./mealInput/search/SearchComponent";
 import SearchResults from "./mealInput/search/SearchResults";
 import { useState } from "react";
 import { generateUniqueId } from "../../../../utils/generateId";
-
-interface FormTrackingProps {
-  onAddCard: (newCard: MenuType) => void;
-}
 
 export default function FormTracking({ onAddCard }: FormTrackingProps) {
   const { setMealData } = useMealTracking();

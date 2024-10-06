@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import Title from "../../../reusable-ui/Title";
-import { MenuType } from "../form/typeForm";
+import { CardMealProps } from "../form/typeForm";
 import Card from "../../../reusable-ui/Card";
-
-interface CardMealProps {
-  menu: MenuType[];
-}
 
 export default function CardMeal({ menu }: CardMealProps) {
   return (

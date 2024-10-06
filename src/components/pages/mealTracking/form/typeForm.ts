@@ -38,3 +38,10 @@ export type MenuType = {
   calory: string;
   mealName: string;
 };
+
+export type FormTrackingProps = {
+  onAddCard: (newCard: MenuType) => void;
+};
+export type CardMealProps = {
+  menu: MenuType[];
+}
