@@ -8,7 +8,7 @@ export default function CardMeal({ menu }: CardMealProps) {
     <CardMealStyled>
       <Title label="Petit-déjeuner" />
       <div className="container-card">
-        {menu.length !== 0
+        {menu.length !== 1
           ? menu.map((meal, index) => (
               <Card
                 key={index}

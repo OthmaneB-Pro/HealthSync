@@ -28,7 +28,7 @@ export default function FormTracking({ onAddCard }: FormTrackingProps) {
     console.log(data);
     const newCard: MenuType = {
       id: generateUniqueId(),
-      title: data.mealName,
+      title: data.search,
       src: "https://www.doitinparis.com/files/2022/bars-restos/burgers/10/junk/junk-burger.jpg",
       alt: "ImageMeal",
       quantity: data.quantity,

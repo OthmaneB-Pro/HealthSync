@@ -14,8 +14,8 @@ export default function Card({
       <img src={src} alt={alt} />
       <h2>{title}</h2>
       <div className="textCard">
-        <p>{quantity}</p>
-        <p>{calory}</p>
+        <p>Quantité : {quantity}g</p>
+        <p>Calorie : {calory}cal</p>
       </div>
       <h4>{meal}</h4>
     </CardStyled>

@@ -9,7 +9,7 @@ export default function CardDisplay() {
       alt="imageMeal"
       title={search}
       quantity={quantity}
-      calory={"Calories 20g"}
+      calory= {"20"}
       meal={mealName}
     />
   );
