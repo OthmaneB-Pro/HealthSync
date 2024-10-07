@@ -8,18 +8,20 @@ export default function CardMeal({ menu }: CardMealProps) {
     <CardMealStyled>
       <Title label="Petit-déjeuner" />
       <div className="container-card">
-        {menu.length !== 1
-          ? menu.map((meal, index) => (
-              <Card
-                key={index}
-                title={meal.title}
-                src={meal.src}
-                alt={meal.alt}
-                quantity={meal.quantity}
-                calory={meal.calory}
-                meal={meal.mealName}
-              />
-            ))
+        {menu.length > 1
+          ? menu
+              .filter((meal) => meal.title && meal.quantity)
+              .map((meal, index) => (
+                <Card
+                  key={index}
+                  title={meal.title}
+                  src={meal.src}
+                  alt={meal.alt}
+                  quantity={meal.quantity}
+                  calory={meal.calory}
+                  meal={meal.mealName}
+                />
+              ))
           : "Vous n'avez rien mangé de la journée ! "}
       </div>
     </CardMealStyled>
