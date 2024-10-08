@@ -30,6 +30,7 @@ export type ElementListType = {
   label: string;
 };
 export type ButtonType = {
+  type? : "button" | "submit" | "reset" | undefined;
   Logo: JSX.Element;
   label: string;
   onClick?: () => void;

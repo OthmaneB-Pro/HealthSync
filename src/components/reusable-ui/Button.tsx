@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ButtonType } from "./typeReusable";
 
 export default function Button({
+  type,
   Logo,
   label,
   onClick,
@@ -9,7 +10,7 @@ export default function Button({
   disabled,
 }: ButtonType) {
   return (
-    <ButtonStyled disabled={disabled} className={className} onClick={onClick}>
+    <ButtonStyled disabled={disabled} type={type} className={className} onClick={onClick}>
       {Logo && Logo}
       {label}
     </ButtonStyled>

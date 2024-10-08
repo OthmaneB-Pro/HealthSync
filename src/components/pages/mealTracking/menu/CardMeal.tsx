@@ -22,7 +22,7 @@ export default function CardMeal({ menu }: CardMealProps) {
                   meal={meal.mealName}
                 />
               ))
-          : "Vous n'avez rien mangé de la journée ! "}
+          : "Vous n'avez rien mangé de la journée !"}
       </div>
     </CardMealStyled>
   );
