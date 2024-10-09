@@ -25,15 +25,16 @@ export default function FormTracking({ onAddCard }: FormTrackingProps) {
 
   const onSubmit = (data: FormType) => {
     setMealData(data.mealName, data.quantity, data.search);
-    console.log(data);
+    const { mealName, quantity, search, image } = useMealTracking.getState();
+
     const newCard: MenuType = {
       id: generateUniqueId(),
-      title: data.search,
-      src: "https://www.doitinparis.com/files/2022/bars-restos/burgers/10/junk/junk-burger.jpg",
-      alt: "ImageMeal",
-      quantity: data.quantity,
+      title: search,
+      src: image,
+      alt: search,
+      quantity: quantity,
       calory: "100",
-      mealName: data.mealName,
+      mealName: mealName,
     };
     onAddCard(newCard);
   };
