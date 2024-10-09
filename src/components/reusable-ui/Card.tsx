@@ -34,8 +34,9 @@ const CardStyled = styled.div`
   overflow: hidden;
 
   img {
-    width: 160px;
-    height: auto;
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
   }
 
   h2 {

@@ -21,7 +21,7 @@ export const useMealTracking = create<MealState>((set) => ({
       mealName,
       quantity,
       search,
-      image: image || "default-image-url.jpg",
+      image: image || "./img/image_default.PNG",
     });
   },
 }));
