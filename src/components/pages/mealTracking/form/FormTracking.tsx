@@ -25,7 +25,10 @@ export default function FormTracking({ onAddCard }: FormTrackingProps) {
 
   const onSubmit = (data: FormType) => {
     setMealData(data.mealName, data.quantity, data.search);
-    const { mealName, quantity, search, image } = useMealTracking.getState();
+    const { mealName, quantity, search, image, calory } =
+      useMealTracking.getState();
+
+    const caloryTotal = (parseFloat(calory) * data.quantity).toFixed(0);
 
     const newCard: MenuType = {
       id: generateUniqueId(),
@@ -33,7 +36,7 @@ export default function FormTracking({ onAddCard }: FormTrackingProps) {
       src: image,
       alt: search,
       quantity: quantity,
-      calory: "100",
+      calory: caloryTotal,
       mealName: mealName,
     };
     onAddCard(newCard);

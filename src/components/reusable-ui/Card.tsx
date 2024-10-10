@@ -11,11 +11,13 @@ export default function Card({
 }: CardType) {
   return (
     <CardStyled>
-      <img src={src} alt={alt} />
+      <div className="image_container">
+        <img src={src} alt={alt} />
+      </div>
       <h2>{title}</h2>
       <div className="textCard">
         <p>Quantité : {quantity}g</p>
-        <p>Calorie : {calory}cal</p>
+        <p>Calorie : {calory} kcal</p>
       </div>
       <h4>{meal}</h4>
     </CardStyled>
@@ -33,6 +35,10 @@ const CardStyled = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
+  .image_container {
+    max-width: 100%;
+    height: 150px;
+  }
   img {
     max-width: 100%;
     max-height: 150px;

@@ -6,6 +6,7 @@ type MealState = {
   quantity: number;
   search: string;
   image: string;
+  calory: string;
   setMealData: (mealName: string, quantity: number, search: string) => void;
 };
 
@@ -14,14 +15,16 @@ export const useMealTracking = create<MealState>((set) => ({
   quantity: 0,
   search: "",
   image: "",
+  calory: "N/A",
   setMealData: async (mealName, quantity, search) => {
-    const image = await fetchImage(search);
+    const { image, calory } = await fetchImage(search);
 
     set({
       mealName,
       quantity,
       search,
       image: image || "./img/image_default.PNG",
+      calory,
     });
   },
 }));
