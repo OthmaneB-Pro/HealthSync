@@ -2,8 +2,14 @@ import styled from "styled-components";
 import Title from "../../../reusable-ui/Title";
 import { CardMealProps } from "../form/typeForm";
 import Card from "../../../reusable-ui/Card";
+import { useFormStore } from "../../../../stores/useFormStore";
 
 export default function CardMeal({ menu }: CardMealProps) {
+  const {setIsOpen} = useFormStore()
+  const handleUpdate = () => {
+    setIsOpen(true)
+  }
+
   return (
     <CardMealStyled>
       <Title label="Petit-déjeuner" />
@@ -20,6 +26,7 @@ export default function CardMeal({ menu }: CardMealProps) {
                   quantity={meal.quantity}
                   calory={meal.calory}
                   meal={meal.mealName}
+                  onUpdate={handleUpdate}
                 />
               ))
           : "Vous n'avez rien mangé de la journée !"}

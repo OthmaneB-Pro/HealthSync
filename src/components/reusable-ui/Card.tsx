@@ -8,9 +8,10 @@ export default function Card({
   quantity,
   calory,
   meal,
+  onUpdate,
 }: CardType) {
   return (
-    <CardStyled>
+    <CardStyled onClick={onUpdate}>
       <div className="image_container">
         <img src={src} alt={alt} />
       </div>
@@ -34,6 +35,12 @@ const CardStyled = styled.div`
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+
+  &:hover{
+    scale: 1.1;
+    transition: 0.2s;
+    cursor: pointer;
+  }
 
   .image_container {
     max-width: 100%;

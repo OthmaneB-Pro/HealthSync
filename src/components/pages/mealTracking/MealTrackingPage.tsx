@@ -6,9 +6,12 @@ import CardMeal from "./menu/CardMeal";
 import { useState } from "react";
 import { Empty_Menu } from "../../../data/MenuData";
 import { MenuType } from "./form/typeForm";
+import { useFormStore } from "../../../stores/useFormStore";
+import FormUpdateCard from "./menu/FormUpdateCard";
 
 export default function MealTrackingPage() {
   const [menu, setMenu] = useState<MenuType[]>(Empty_Menu);
+  const { isOpen } = useFormStore();
 
   const onAddCard = (NewCard: MenuType) => {
     const updatedMenu = [NewCard, ...menu];
@@ -19,6 +22,7 @@ export default function MealTrackingPage() {
     <div>
       <Title label="Suivi des repas" />
       <FormDisplayStyled>
+        {isOpen && <FormUpdateCard />}
         <FormTracking onAddCard={onAddCard} />
         <CardDisplay />
       </FormDisplayStyled>

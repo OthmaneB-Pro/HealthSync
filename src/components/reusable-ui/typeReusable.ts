@@ -45,4 +45,5 @@ export type CardType = {
   quantity: number;
   calory: string;
   meal: string;
+  onUpdate? : () => void
 };
