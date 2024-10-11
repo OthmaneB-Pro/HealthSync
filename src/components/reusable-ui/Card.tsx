@@ -37,8 +37,10 @@ const CardStyled = styled.div`
   overflow: hidden;
 
   &:hover{
-    scale: 1.1;
+    scale: 1.05;
     transition: 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.3);
+
     cursor: pointer;
   }
 
