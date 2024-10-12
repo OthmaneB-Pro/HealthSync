@@ -12,12 +12,12 @@ export type ListResultsType = {
 };
 
 export type InputWithYupType = {
-  type: string;
+  type?: string;
   placeholder: string;
   register?: any;
   name?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
+  value?: string | number;
 };
 export type ErrorTextProps = {
   errors: FieldErrors<FormType>;

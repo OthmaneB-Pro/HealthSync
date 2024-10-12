@@ -1,11 +1,33 @@
 import styled from "styled-components";
 import { useFormStore } from "../../../../stores/useFormStore";
+import InputWithYup from "../../../reusable-ui/InputYup";
+import MealButton from "../form/mealButton/MealButton";
+import { FormType } from "../form/typeForm";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "../form/yupSchema";
+import { useMealTracking } from "../../../../stores/useMealTracking";
 
 export default function FormUpdateCard() {
     const {setIsOpen} = useFormStore()
+    const { search, quantity } = useMealTracking()
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors, isSubmitting },
+      } = useForm<FormType>({ resolver: yupResolver(schema) });
+
+    const onSubmit = (data : FormType) => {
+        console.log(data)
+    }
+    
   return (
     <BackgroundStyled>
-      <FormStyled>
+      <FormStyled onSubmit={handleSubmit(onSubmit)}>
+        <MealButton setValue={setValue} />
+        <InputWithYup type="text" value={search} placeholder="Repas" /> 
+        <InputWithYup type="number" value={quantity} placeholder="Quantité" />
         <button onClick={() => setIsOpen(false)}>
             Fermer le bouton
         </button>
