@@ -26,8 +26,10 @@ export default function FormUpdateCard() {
     <BackgroundStyled>
       <FormStyled onSubmit={handleSubmit(onSubmit)}>
         <MealButton setValue={setValue} />
-        <InputWithYup type="text" value={search} placeholder="Repas" /> 
-        <InputWithYup type="number" value={quantity} placeholder="Quantité" />
+        <InputWithYup type="text" value={search} placeholder="Repas" {...register("search")} /> 
+        {errors.search && <span>{errors.search.message}</span>}
+        <InputWithYup type="number" value={quantity} placeholder="Quantité" {...register("quantity")}/>
+        {errors.quantity && <span>{errors.quantity.message}</span>}
         <button onClick={() => setIsOpen(false)}>
             Fermer le bouton
         </button>
