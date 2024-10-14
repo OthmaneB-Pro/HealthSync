@@ -7,10 +7,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../form/yupSchema";
 import { useMealTracking } from "../../../../stores/useMealTracking";
+import Button from "../../../reusable-ui/Button";
+import { FaCircleCheck } from "react-icons/fa6";
+import { useEffect } from "react";
 
 export default function FormUpdateCard() {
     const {setIsOpen} = useFormStore()
-    const { search, quantity } = useMealTracking()
+    const { search, quantity, setMealData } = useMealTracking()
     const {
         register,
         handleSubmit,
@@ -18,18 +21,31 @@ export default function FormUpdateCard() {
         formState: { errors, isSubmitting },
       } = useForm<FormType>({ resolver: yupResolver(schema) });
 
+      useEffect(() => {
+        setValue("search", search);
+        setValue("quantity", quantity);
+      }, [search, quantity, setValue]);
+
     const onSubmit = (data : FormType) => {
-        console.log(data)
+        console.log("Submitted data:", data);
+        setMealData(data.mealName, data.quantity, data.search);
+        setIsOpen(false)
     }
     
   return (
     <BackgroundStyled>
       <FormStyled onSubmit={handleSubmit(onSubmit)}>
         <MealButton setValue={setValue} />
-        <InputWithYup type="text" value={search} placeholder="Repas" {...register("search")} /> 
+        <InputWithYup name="search" type="text" placeholder="Repas" register={register} /> 
         {errors.search && <span>{errors.search.message}</span>}
-        <InputWithYup type="number" value={quantity} placeholder="Quantité" {...register("quantity")}/>
+        <InputWithYup name="quantity" type="number" placeholder="Quantité" register={register} />
         {errors.quantity && <span>{errors.quantity.message}</span>}
+        <Button
+          className="submit-button"
+          label="Confirmer"
+          Logo={<FaCircleCheck />}
+          disabled={isSubmitting}
+        />
         <button onClick={() => setIsOpen(false)}>
             Fermer le bouton
         </button>
