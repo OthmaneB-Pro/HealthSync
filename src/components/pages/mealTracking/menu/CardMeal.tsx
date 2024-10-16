@@ -6,9 +6,7 @@ import { useFormStore } from "../../../../stores/useFormStore";
 
 export default function CardMeal({ menu }: CardMealProps) {
   const {setIsOpen} = useFormStore()
-  const handleUpdate = () => {
-    setIsOpen(true)
-  }
+  const handleUpdate = () => setIsOpen(true);
 
   return (
     <CardMealStyled>

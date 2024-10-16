@@ -13,9 +13,8 @@ export default function MealTrackingPage() {
   const [menu, setMenu] = useState<MenuType[]>(Empty_Menu);
   const { isOpen } = useFormStore();
 
-  const onAddCard = (NewCard: MenuType) => {
-    const updatedMenu = [NewCard, ...menu];
-    setMenu(updatedMenu);
+  const onAddCard = (newCard: MenuType) => {
+    setMenu((prevMenu) => [newCard, ...prevMenu]);
   };
 
   return (

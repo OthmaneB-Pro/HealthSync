@@ -27,7 +27,6 @@ export default function FormUpdateCard() {
       }, [search, quantity, setValue]);
 
     const onSubmit = (data : FormType) => {
-        console.log("Submitted data:", data);
         setMealData(data.mealName, data.quantity, data.search);
         setIsOpen(false)
     }
