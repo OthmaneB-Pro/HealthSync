@@ -12,42 +12,52 @@ import { FaCircleCheck } from "react-icons/fa6";
 import { useEffect } from "react";
 
 export default function FormUpdateCard() {
-    const {setIsOpen} = useFormStore()
-    const { search, quantity, setMealData } = useMealTracking()
-    const {
-        register,
-        handleSubmit,
-        setValue,
-        formState: { errors, isSubmitting },
-      } = useForm<FormType>({ resolver: yupResolver(schema) });
+  const { setIsOpen } = useFormStore();
+  const { mealName, search, quantity, setMealData } = useMealTracking();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors, isSubmitting },
+  } = useForm<FormType>({ resolver: yupResolver(schema) });
 
-      useEffect(() => {
-        setValue("search", search);
-        setValue("quantity", quantity);
-      }, [search, quantity, setValue]);
+  useEffect(() => {
+    setValue("search", search);
+    setValue("quantity", quantity);
+    setValue("mealName", mealName);
+  }, [search, quantity, setValue, mealName]);
 
-    const onSubmit = (data : FormType) => {
-        setMealData(data.mealName, data.quantity, data.search);
-        setIsOpen(false)
-    }
-    
+  const onSubmit = (data: FormType) => {
+    setMealData(data.mealName, data.quantity, data.search);
+    setIsOpen(false);
+  };
+
   return (
     <BackgroundStyled>
       <FormStyled onSubmit={handleSubmit(onSubmit)}>
         <MealButton setValue={setValue} />
-        <InputWithYup name="search" type="text" placeholder="Repas" register={register} /> 
+        <InputWithYup
+          name="search"
+          type="text"
+          placeholder="Repas"
+          register={register}
+        />
         {errors.search && <span>{errors.search.message}</span>}
-        <InputWithYup name="quantity" type="number" placeholder="Quantité" register={register} />
+        <InputWithYup
+          name="quantity"
+          type="number"
+          placeholder="Quantité"
+          register={register}
+        />
         {errors.quantity && <span>{errors.quantity.message}</span>}
         <Button
           className="submit-button"
           label="Confirmer"
           Logo={<FaCircleCheck />}
           disabled={isSubmitting}
+          type="submit"
         />
-        <button onClick={() => setIsOpen(false)}>
-            Fermer le bouton
-        </button>
+        <button onClick={() => setIsOpen(false)}>Fermer le bouton</button>
       </FormStyled>
     </BackgroundStyled>
   );

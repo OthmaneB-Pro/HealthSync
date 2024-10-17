@@ -10,7 +10,7 @@ export default function CardMeal({ menu }: CardMealProps) {
 
   return (
     <CardMealStyled>
-      <Title label="Petit-déjeuner" />
+      <Title label="Repas de la journée :" />
       <div className="container-card">
         {menu.length > 1
           ? menu
