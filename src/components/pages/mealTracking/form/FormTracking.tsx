@@ -3,7 +3,7 @@ import { schema } from "./yupSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "../../../reusable-ui/Button";
 import { FaCircleCheck } from "react-icons/fa6";
-import { FormType, Product } from "./typeForm";
+import { FormTrackingProps, FormType, MenuType, Product } from "./typeForm";
 import styled from "styled-components";
 import MealButton from "./mealButton/MealButton";
 import MealInput from "./mealInput/MealInput";
@@ -11,8 +11,9 @@ import { useMealTracking } from "../../../../stores/useMealTracking";
 import SearchComponent from "./mealInput/search/SearchComponent";
 import SearchResults from "./mealInput/search/SearchResults";
 import { useState } from "react";
+import { generateUniqueId } from "../../../../utils/generateId";
 
-export default function FormTracking() {
+export default function FormTracking({ onAddCard }: FormTrackingProps) {
   const { setMealData } = useMealTracking();
   const [results, setResults] = useState<Product[]>([]);
   const {
@@ -24,11 +25,21 @@ export default function FormTracking() {
 
   const onSubmit = (data: FormType) => {
     setMealData(data.mealName, data.quantity, data.search);
-    console.log(data);
-  };
+    const { mealName, quantity, search, image, calory } =
+      useMealTracking.getState();
 
-  const handleClick = (item: Product) => {
-    setValue("search", item.product_name);
+    const caloryTotal = (parseFloat(calory) * data.quantity).toFixed(0);
+
+    const newCard: MenuType = {
+      id: generateUniqueId(),
+      title: search,
+      src: image,
+      alt: search,
+      quantity: quantity,
+      calory: caloryTotal,
+      mealName: mealName,
+    };
+    onAddCard(newCard);
   };
 
   return (
@@ -46,7 +57,10 @@ export default function FormTracking() {
 
       <div>
         <SearchComponent setResults={setResults} />
-        <SearchResults results={results} handleClick={handleClick} />
+        <SearchResults
+          results={results}
+          handleClick={(item: Product) => setValue("search", item.product_name)}
+        />
       </div>
     </ContainerStyled>
   );

@@ -27,4 +27,21 @@ export type SearchComponentProps = {
 export type SearchResulsType = {
   results: any[];
   handleClick: (item: any) => void;
+};
+
+export type MenuType = {
+  id: string;
+  title: string;
+  src: string;
+  alt: string;
+  quantity: number;
+  calory: string;
+  mealName: string;
+};
+
+export type FormTrackingProps = {
+  onAddCard: (newCard: MenuType) => void;
+};
+export type CardMealProps = {
+  menu: MenuType[];
 }

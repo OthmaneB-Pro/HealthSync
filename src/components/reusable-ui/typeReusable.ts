@@ -12,12 +12,12 @@ export type ListResultsType = {
 };
 
 export type InputWithYupType = {
-  type: string;
+  type?: string;
   placeholder: string;
   register?: any;
   name?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
+  value?: string | number;
 };
 export type ErrorTextProps = {
   errors: FieldErrors<FormType>;
@@ -30,9 +30,20 @@ export type ElementListType = {
   label: string;
 };
 export type ButtonType = {
+  type? : "button" | "submit" | "reset" | undefined;
   Logo: JSX.Element;
   label: string;
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
+};
+
+export type CardType = {
+  src: string;
+  alt: string;
+  title: string;
+  quantity: number;
+  calory: string;
+  meal: string;
+  onUpdate? : () => void
 };

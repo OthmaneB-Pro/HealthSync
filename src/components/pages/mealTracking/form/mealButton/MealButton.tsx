@@ -16,6 +16,7 @@ export default function MealButton({ setValue }: MealButtonType) {
       {ButtonMealList.map((button) => (
         <Button
           key={button.label}
+          type="button"
           label={button.label}
           Logo={button.Logo}
           className={selectedMeal === button.label ? "active" : ""}
