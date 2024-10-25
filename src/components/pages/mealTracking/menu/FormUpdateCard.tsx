@@ -10,6 +10,7 @@ import { useMealTracking } from "../../../../stores/useMealTracking";
 import Button from "../../../reusable-ui/Button";
 import { FaCircleCheck } from "react-icons/fa6";
 import { useEffect } from "react";
+import CloseButton from "./CloseButton";
 
 export default function FormUpdateCard() {
   const { setIsOpen } = useFormStore();
@@ -57,7 +58,7 @@ export default function FormUpdateCard() {
           disabled={isSubmitting}
           type="submit"
         />
-        <button onClick={() => setIsOpen(false)}>Fermer le bouton</button>
+        <CloseButton setIsOpen={setIsOpen} />
       </FormStyled>
     </BackgroundStyled>
   );
@@ -79,8 +80,8 @@ const FormStyled = styled.form`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #f9f9f9;
-  width: 700px;
-  height: auto;
+  width: 550px;
+  height: 500px;
   max-height: 90vh;
   overflow-y: auto;
   z-index: 1001;
@@ -90,4 +91,8 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .submit-button {
+    margin-top: 25px;
+  }
 `;
