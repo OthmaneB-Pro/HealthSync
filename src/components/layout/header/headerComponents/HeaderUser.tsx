@@ -4,7 +4,7 @@ export default function HeaderUser() {
   return (
     <HeaderUserStyled>
       <h3>Othmane</h3>
-      <img src="" alt="user-logo" />
+      <img src="/img/Photo_de_Profil.PNG" alt="user-logo" />
     </HeaderUserStyled>
   );
 }
@@ -15,8 +15,9 @@ const HeaderUserStyled = styled.div`
     margin-left: 15px;
     width: 50px;
     height: 50px;
-    border-radius: 40px;
-    background-color: grey;
+    border-radius: 50%;
+    border: 2px solid gray;
     cursor: pointer;
+    object-fit: cover;
   }
 `;

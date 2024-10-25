@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default function TextDashboard() {
-  return <TextStyled>Augmentez vos heures de sommeil !</TextStyled>;
+  return <TextStyled>Il faut augmenter vos heures de sommeil !</TextStyled>;
 }
 
 const TextStyled = styled.p`
