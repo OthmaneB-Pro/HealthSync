@@ -1,5 +1,11 @@
+import Title from "../../reusable-ui/Title";
+import FormActivity from "./FormActivity";
+
 export default function ActivityPage() {
   return (
-    <div>ActivityPage</div>
+    <div>
+        <Title label="Activité physique" />
+        <FormActivity/>
+    </div>
   )
 }
