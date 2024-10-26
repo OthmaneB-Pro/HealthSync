@@ -11,7 +11,9 @@ export default function SidebarMenu() {
           href={list.href}
           label={list.label}
           Logo={list.Logo}
-          className={window.location.pathname === list.href ? "active-button" : ""}
+          className={
+            window.location.pathname === list.href ? "active-button" : ""
+          }
         />
       ))}
     </SidebarMenuStyled>
@@ -21,10 +23,10 @@ const SidebarMenuStyled = styled.ul`
   padding: 0px;
 
   .active-button {
-      background-color: #a11414;
-      border-radius: 5px;
-      a{
+    background-color: #a11414;
+    border-radius: 5px;
+    a {
       color: white;
-      }
+    }
   }
 `;
