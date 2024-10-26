@@ -28,6 +28,7 @@ export type ElementListType = {
   href: string;
   Logo: JSX.Element;
   label: string;
+  className?: string;
 };
 export type ButtonType = {
   type? : "button" | "submit" | "reset" | undefined;

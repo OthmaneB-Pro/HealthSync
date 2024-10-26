@@ -1,4 +1,6 @@
 import { sportsData } from "../../../data/ActivityData";
+import Button from "../../reusable-ui/Button";
+import { FaCircleCheck } from "react-icons/fa6";
 
 export default function FormActivity() {
   return (
@@ -14,6 +16,7 @@ export default function FormActivity() {
         </select>
         <label>Durée : </label>
         <input placeholder="Durée" type="number" />
+        <Button Logo={<FaCircleCheck />} label="Confirmer"/>
       </form>
     </div>
   );

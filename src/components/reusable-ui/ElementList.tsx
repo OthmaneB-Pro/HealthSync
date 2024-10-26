@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { ElementListType } from "./typeReusable";
 
-export default function ElementList({ href, Logo, label }: ElementListType) {
+export default function ElementList({
+  href,
+  Logo,
+  label,
+  className,
+}: ElementListType) {
   return (
-    <ElementListStyled>
+    <ElementListStyled className={className}>
       <a href={href}>
         {Logo && Logo}
         {label}
