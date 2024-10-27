@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# HealthSync
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description du projet
+**HealthSync** est une application web de suivi de santé et de bien-être permettant aux utilisateurs de suivre leurs repas et leurs activités physiques. L’application aide les utilisateurs à suivre et à atteindre leurs objectifs de santé personnalisés en fournissant une vue d’ensemble de leurs habitudes de vie.
 
-## Available Scripts
+### Problématique
+Comment créer une plateforme permettant aux utilisateurs de gérer efficacement leurs repas et activités physiques pour une vision unifiée de leur bien-être quotidien ?
 
-In the project directory, you can run:
+## Fonctionnalités principales
+- **Suivi des repas** : Interface pour ajouter, consulter et modifier les repas, avec suivi des informations nutritionnelles (calories, date, etc.).
+- **Suivi des activités physiques** : Interface pour ajouter et consulter les activités physiques avec des détails comme la durée et les calories brûlées.
+- **Interface intuitive et personnalisée** : Sidebar, header et sections spécifiques pour une navigation facile entre les fonctionnalités.
 
-### `npm start`
+## Technologies utilisées
+- **React & TypeScript** : Gestion de l'interface utilisateur et du typage robuste.
+- **Zustand** : Gestion globale de l’état de l’application, facilitant le partage des données de santé entre les composants.
+- **Axios** : Gestion des appels API, notamment avec les fonctionnalités CRUD des repas.
+- **React Router** : Gestion de la navigation pour des pages distinctes (suivi des repas, activités, etc.).
+- **Jest & React Testing Library** : Tests unitaires et de composants pour garantir la fiabilité de l’application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation et exécution
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clonez ce dépôt sur votre machine locale :
+    ```bash
+    git clone https://github.com/votre-compte/HealthSync.git
+    ```
+2. Accédez au répertoire du projet :
+    ```bash
+    cd HealthSync
+    ```
+3. Installez les dépendances nécessaires pour le frontend et le backend :
+    ```bash
+    npm install
+    ```
+4. Exécutez l'application :
+    
+    npm start
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+L'application sera accessible à l'adresse : http://localhost:3000.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Structure du projet
+- **/frontend** : Projet React (interface utilisateur).
+- **/src** : Regroupe les fichiers sources de l’application.
+- **/components** : Composants React pour l’interface utilisateur (Sidebar, Header, Suivi des repas, Suivi des activités, etc.).
+- **/tests** : Fichiers de tests unitaires et d’intégration utilisant Jest et React Testing Library.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+## Capture d'écran de l'interface utilisateur
+![Capture d'écran - Dashboard](https://github.com/OthmaneB-Pro/filmfinder/raw/main/public/img/HealthSync.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Capture d'écran - Repos](https://github.com/OthmaneB-Pro/filmfinder/raw/main/public/img/HealthSyncSleep.PNG)
 
-### `npm run eject`
+![Capture d'écran - Suivi des repas](https://github.com/OthmaneB-Pro/filmfinder/raw/main/public/img/HealthSyncRepas.PNG)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Résultat
+HealthSync est une application complète et intuitive permettant aux utilisateurs de suivre leurs données de santé de manière centralisée. Avec des fonctionnalités de synchronisation Google Fit, de gestion des repas et des activités, et un design responsive, HealthSync offre une expérience fluide et optimisée pour une prise en main efficace de la santé quotidienne.
