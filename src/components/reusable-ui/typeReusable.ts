@@ -48,3 +48,11 @@ export type CardType = {
   meal: string;
   onUpdate? : () => void
 };
+
+export type SelectType = {
+  id: string;
+  label: string;
+  options: string[];
+  register: any;
+  error?: string;
+};

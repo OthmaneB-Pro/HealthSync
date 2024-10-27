@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { activity } from "./activity";
 import { activityType } from "./activityType";
+import InputWithYup from "../../reusable-ui/InputYup";
+import Select from "../../reusable-ui/Select";
 
 export default function FormActivity() {
   const {
@@ -23,20 +25,24 @@ export default function FormActivity() {
   return (
     <div>
       <FormStyled onSubmit={handleSubmit(onSubmit)}>
+        <Select
+          id="sport"
+          label="Sport : "
+          options={sportsData}
+          register={register("sport")}
+          error={errors.sport?.message}
+        />
 
-        <label htmlFor="sport">Sport : </label>
-        <select id="sport" {...register("sport")}>
-          {sportsData.map((sport) => (
-            <option key={sport} value={sport}>
-              {sport}
-            </option>
-          ))}
-        </select>
-        {errors.sport && <p>{errors.sport.message}</p>}
-
-        <label>Durée : </label>
-        <input placeholder="Durée" type="time" {...register("duration")} />
-        {errors.duration && <p>{errors.duration.message}</p>}
+        <div className="time">
+          <label>Durée : </label>
+          <InputWithYup
+            name="duration"
+            placeholder="Durée"
+            type="time"
+            register={register}
+          />
+          {errors.duration && <p>{errors.duration.message}</p>}
+        </div>
 
         <Button Logo={<FaCircleCheck />} label="Confirmer" />
       </FormStyled>
@@ -48,4 +54,25 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   width: 300px;
+  background-color: white;
+  border: 1px solid gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  .time {
+    margin-bottom: 20px;
+    label {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      width: 280px;
+    }
+    p {
+      color: red;
+    }
+  }
 `;
