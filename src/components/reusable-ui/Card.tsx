@@ -33,6 +33,7 @@ const CardStyled = styled.div`
   height: 290px;
   padding: 30px 5px;
   border-radius: 15px;
+  border: 1px solid gray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
