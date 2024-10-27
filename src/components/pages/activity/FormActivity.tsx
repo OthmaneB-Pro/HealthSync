@@ -8,8 +8,10 @@ import { activity } from "./activity";
 import { activityType } from "./activityType";
 import InputWithYup from "../../reusable-ui/InputYup";
 import Select from "../../reusable-ui/Select";
+import { useActivityStore } from "../../../stores/useActivityStore";
 
 export default function FormActivity() {
+  const { setActivity } = useActivityStore();
   const {
     register,
     handleSubmit,
@@ -20,6 +22,7 @@ export default function FormActivity() {
 
   const onSubmit = (data: activityType) => {
     console.log(data);
+    setActivity({ sport: data.sport, duration: data.duration });
   };
 
   return (
