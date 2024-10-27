@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useActivityStore } from "../../../stores/useActivityStore";
+import TextEmpty from "./TextEmpty";
 
 export default function ActivityCard() {
   const { activities } = useActivityStore();
@@ -13,7 +14,7 @@ export default function ActivityCard() {
               <p>{activity.duration}</p>
             </CardStyled>
           ))
-        : "Pas d'activité enregistrée"}
+        : <TextEmpty />}
     </ContainerStyled>
   );
 }
