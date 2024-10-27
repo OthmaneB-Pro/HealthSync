@@ -48,11 +48,11 @@ L'application sera accessible à l'adresse : http://localhost:3000.
 
   
 ## Capture d'écran de l'interface utilisateur
-![Capture d'écran - Dashboard](https://github.com/OthmaneB-Pro/filmfinder/raw/main/public/img/HealthSync.PNG)
+![Capture d'écran - Dashboard](https://github.com/OthmaneB-Pro/HealthSync/raw/main/public/img/HealthSync.PNG)
 
-![Capture d'écran - Repos](https://github.com/OthmaneB-Pro/filmfinder/raw/main/public/img/HealthSyncSleep.PNG)
+![Capture d'écran - Repos](https://github.com/OthmaneB-Pro/HealthSync/raw/main/public/img/HealthSyncSleep.PNG)
 
-![Capture d'écran - Suivi des repas](https://github.com/OthmaneB-Pro/filmfinder/raw/main/public/img/HealthSyncRepas.PNG)
+![Capture d'écran - Suivi des repas](https://github.com/OthmaneB-Pro/HealthSync/raw/main/public/img/HealthSyncRepas.PNG)
 
 
 ## Résultat
