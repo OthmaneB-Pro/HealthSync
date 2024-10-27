@@ -29,6 +29,7 @@ export default function SearchComponent({ setResults }: SearchComponentProps) {
 const SearchStyled = styled.div`
   background: white;
   padding: 20px;
+  border: 1px solid gray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
   input {
     width: 200px;

@@ -28,6 +28,7 @@ export type ElementListType = {
   href: string;
   Logo: JSX.Element;
   label: string;
+  className?: string;
 };
 export type ButtonType = {
   type? : "button" | "submit" | "reset" | undefined;
@@ -46,4 +47,12 @@ export type CardType = {
   calory: string;
   meal: string;
   onUpdate? : () => void
+};
+
+export type SelectType = {
+  id: string;
+  label: string;
+  options: string[];
+  register: any;
+  error?: string;
 };

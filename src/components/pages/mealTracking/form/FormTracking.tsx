@@ -75,6 +75,7 @@ const FormTrackingStyled = styled.form`
   width: 550px;
   height: 464px;
   padding: 30px 5px;
+  border: 1px solid gray; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 
   .submit-button {

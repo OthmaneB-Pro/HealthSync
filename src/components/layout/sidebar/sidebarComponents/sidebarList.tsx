@@ -14,12 +14,12 @@ export const sidebarList = [
     label: "Suivi des repas",
   },
   {
-    href: "/",
+    href: "/activity",
     Logo: <FaRunning />,
     label: "Activité physique",
   },
   {
-    href: "/",
+    href: "/parameters",
     Logo: <IoSettingsSharp />,
     label: "Paramètres",
   },
